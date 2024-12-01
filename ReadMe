@@ -1,1 +1,8 @@
 Repo này dành cho người Việt nhằm tạo docker ComfyUI trên máy tính hoặc server tùy thích. Docker chạy Python 3.11 và CUDA 12.11
+**Lưu ý:**
+Bạn sửa lại port và đường dẫn mount trên máy tính / server của bạn trong dockercompose.yaml nhé : 
+ports:
+      - "8188:8188"
+    volumes:
+      - "/mnt/data1/AIApps/comfy:/root"
+      - "/mnt/data1/AIApps/ComfyUI:/root/ComfyUI"
