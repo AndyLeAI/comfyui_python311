@@ -30,3 +30,8 @@ cd ComfyUI/custom_nodes/
 
 pip install -r requirements.txt để cài file requiremnents của node đó.
 gõ exit để thoát khỏi docker
+Dừng container gõ: docker stop comfyui
+Chạy container gõ: docker start comfyui
+Khởi động container: docker restart comfyui
+
+Xóa container: docker rm comfyui
