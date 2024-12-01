@@ -1,0 +1,29 @@
+services:
+
+  comfyui:
+    init: true
+    container_name: comfyui
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: "yanwk/comfyui-boot:cu121-megapak"
+    
+    user: "0:0"
+   
+    ports:
+      - "8188:8188"
+    volumes:
+      - "/mnt/data1/AIApps/comfy:/root"
+      - "/mnt/data1/AIApps/ComfyUI:/root/ComfyUI"
+    environment:
+      - CLI_ARGS=
+    security_opt:
+      - "label=type:nvidia_container_t"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['0']
+              capabilities: [gpu]
+
