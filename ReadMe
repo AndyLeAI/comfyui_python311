@@ -6,3 +6,16 @@ ports:
     volumes:
       - "/mnt/data1/AIApps/comfy:/root"
       - "/mnt/data1/AIApps/ComfyUI:/root/ComfyUI"
+
+**Hướng dẫn:**
+
+vào thư mục trên máy tính/server muốn cài, mở cmd/terminal của bạn và gõ : 
+git clone https://github.com/AndyLeAI/comfyui_python311.git
+
+sau đó gõ tiếp : 
+docker build --no-cache -t my_cuda_image .
+docker-compose build --no-cache
+docker-compose up -d
+
+3 lệnh này để build image và containter có tên là ComfyUI, mặc định nó chạy port 8188, nếu bạn muốn đổi port khác thì khai báo trong dockercompose.yaml
+Yêu cầu ổ cứng còn trống 20 Gb sau khi cài đặt và nhiều dung lượng hơn để lưu trữ model AI khác.
