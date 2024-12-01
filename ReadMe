@@ -9,6 +9,7 @@ ports:
 
 **Hướng dẫn:**
 
+Yêu cầu phải cài đăt Docker.io vào máy tính hoặc server của bạn trước, rồi
 vào thư mục trên máy tính/server muốn cài, mở cmd/terminal của bạn và gõ : 
 git clone https://github.com/AndyLeAI/comfyui_python311.git
 
@@ -19,3 +20,13 @@ docker-compose up -d
 
 3 lệnh này để build image và containter có tên là ComfyUI, mặc định nó chạy port 8188, nếu bạn muốn đổi port khác thì khai báo trong dockercompose.yaml
 Yêu cầu ổ cứng còn trống 20 Gb sau khi cài đặt và nhiều dung lượng hơn để lưu trữ model AI khác.
+
+Để truy cập vào bên trong containter: 
+Gõ lệnh sau trong cmd/terminal : 
+
+docker exec -it comfyui bash
+sau đó chuyển tới thư mục custom node để cài đặt node:
+cd ComfyUI/custom_nodes/
+
+pip install -r requirements.txt để cài file requiremnents của node đó.
+gõ exit để thoát khỏi docker
